@@ -1,0 +1,21 @@
+{
+  "name": "godfather-v6",
+  "main": "worker.js",
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // Key storage. Cloudflare creates this namespace automatically on first deploy.
+  "kv_namespaces": [{ "binding": "LICENSES" }],
+  // Non-secret settings. Secrets (PAYSTACK_SECRET_KEY, LICENSE_SECRET, RESEND_API_KEY)
+  // are added in the dashboard under Settings > Variables and Secrets.
+  "vars": {
+    "PRICE_CENTS": "20000",
+    "CURRENCY": "ZAR",
+    "MAX_ACCOUNTS": "3",
+    "EMAIL_FROM": "GodFatherEA <licenses@yourdomain.com>",
+    "SUPPORT_EMAIL": "support@yourdomain.com"
+  }
+}
